@@ -1,24 +1,31 @@
-# mevn
+# MEVN-Stack boilerplate (MongoDB, Express, Vue, NodeJS)
+
+The entire project will be served by Express as a SPA when built.  
+Feel free to modify as you wish  
+
+The project has TailwindCSS as a bonus
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
+## Build project
+This will build both vue and the server
 ```
 npm run build
 ```
 
-### Lints and fixes files
+## Test Vue
+This will build both vue and the server
 ```
-npm run lint
+npm run vue-test
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Test server
+This will build both vue and the server
+```
+npm run test
+```
+
+Check package.json for more command 
