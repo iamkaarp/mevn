@@ -1,25 +1,22 @@
 const debug =require('debug')('server:debug');
 import config from 'config';
 import express from 'express';
-import bodyParser from 'body-parser';
 import path from 'path';
 
-import book from './route/book.js';
+import books from './route/books.js';
 
 const app = express();
 const port = config.get('port');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: 'application/json'}));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.text());
+app.use(express.json({ type: 'application/json'}));
 
 app.use(express.static(path.join(__dirname, '../dist')));
 
-app.route('/book')
-    .get(book.getBooks);
-app.route('/book/:id')
-    .get(book.getBook);
+app.use('/api/book', books);
+
 
 app.listen(port, () => {
     debug(`server is running on port ${config.get('port')} and in ${config.get('name')} mode`);
