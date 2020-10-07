@@ -11,7 +11,7 @@
     "vue-serve": "vue-cli-service serve",
     "vue-build": "vue-cli-service build",
     "vue-lint": "vue-cli-service lint",
-    "test": "DEBUG=server:debug NODE_ENV=test mocha --require @babel/register --reporter spec --exit tests/ --exec babel-node",
+    "test": "DEBUG=server:debug NODE_ENV=test mocha --require @babel/register --reporter spec --exit tests/* --exec babel-node",
     "test:watch": "DEBUG=server:debug NODE_ENV=development mocha --require @babel/register --watch --reporter spec tests/ --exec babel-node"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.11.5",
     "body-parser": "^1.19.0",
+    "chai-http": "^4.3.0",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
