@@ -1,13 +1,8 @@
-import Factory from 'node-model-factory';
+import factory from 'factoria';
 
-let factory = new Factory();
-
-
-factory.define('Book', (faker) => {
-    return {
-        id: faker.uuid.v4(),
-        title: faker.name.firstName(),
-    };
-});
+factory.define('Book', faker => ({
+    id: faker.random.number(),
+    name: faker.name.findName(),
+}));
 
 export default factory;

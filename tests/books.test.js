@@ -6,8 +6,6 @@ import factory from '../factory/book.factory.js';
 
 let should = chai.should();
 
-console.log(factory.make('Book'));
-
 chai.use(chaiHttp);
 describe('Books', () => {
     describe('/GET book', () => {
